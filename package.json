@@ -19,6 +19,11 @@
   "homepage": "https://github.com/kekuso/cigar-blog#readme",
   "dependencies": {
     "express": "^4.14.0",
+    "gulp": "^3.9.1",
     "pug": "^2.0.0-beta6"
+  },
+  "devDependencies": {
+    "gulp-connect": "^5.0.0",
+    "gulp-sass": "^2.3.2"
   }
 }
