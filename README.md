@@ -1,1 +1,1 @@
-# cigar-blog
+# Adam's personal cigar blog
