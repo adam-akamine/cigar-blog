@@ -675,6 +675,17 @@ html.w-mod-js *[data-ix="appear"] {
 }
 
 @media (max-width: 479px) {
+  body {
+    width: 100vw;
+    overflow: scroll;
+  }
+
+  .nav-menu {
+    text-align: center;
+  }
+  .nav-menu .nav-link {
+    font-size: 10px;
+  }
   .hero-heading {
     font-size: 39px;
     line-height: 52px;
