@@ -113,6 +113,7 @@ p {
   font-weight: 300; }
 
 .nav-menu {
+  margin-top: 25px;
   text-align: center; }
 
 .nav-link {
@@ -421,15 +422,12 @@ p {
   margin-left: auto; }
 
 .logo {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-family: 'Roboto Slab', sans-serif;
-  color: #fdfdfd;
-  font-size: 19px;
-  line-height: 23px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-transform: uppercase; }
+  margin: 0 auto;
+  opacity: 0.85;
+  height: 50px;
+  width: 50px;
+  border: 1px solid white;
+  background-color: darkgray; }
 
 .brand-link {
   z-index: 1;
