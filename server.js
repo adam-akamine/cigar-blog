@@ -4,8 +4,17 @@ var express = require('express');
 
 var app = express();
 app.set('views', path.resolve(__dirname, 'views'));
+app.set('view engine', 'pug');
+
 app.use(express.static('public'));
-app.set('view-engine', 'pug');
+
+app.get('/', function(req, res) {
+  res.render('index');
+})
+
+app.get('/reviews', function(req, res) {
+  res.render('reviews');
+})
 
 var server = app.listen(3000, function () {
   console.log("App listening on port " + server.address().port);

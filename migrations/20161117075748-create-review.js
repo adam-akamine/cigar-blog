@@ -17,6 +17,9 @@ module.exports = {
       reviewText: {
         type: Sequelize.TEXT
       },
+      reviewDate: {
+        type: Sequelize.DATE
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
