@@ -24,7 +24,7 @@ body {
 }
 
 h1 {
-  font-size: 4em;
+  font-size: 5em;
 }
 
 h2 {
@@ -39,6 +39,27 @@ h4 {
   font-size: 1.75em;
 }
 
+h5 {
+  font-size: 1.5em;
+}
+
+h6 {
+  font-size: 1.25em;
+}
+
+.title {
+  font-size: 6.25em;
+  margin: 10px;
+}
+
+.subtitle1 {
+  color: gainsboro;
+}
+
+.subtitle2 {
+  color: gainsboro;
+  letter-spacing: 1px;
+}
 .navbar-default {
   margin: 0 auto;
   z-index: 500;
@@ -46,6 +67,7 @@ h4 {
   background-color: $black-color;
   color: white;
   text-align: center;
+  border-color: $black-color;
 }
 .navbar .navbar-nav {
     display: inline-block;
@@ -85,9 +107,9 @@ h4 {
   margin-left: auto;
   width: 100vw;
   padding: 10px;
-  top: 40%;
+  top: 30%;
   text-shadow: 2px 2px black;
-  color: Gainsboro;
+  color: white;
 }
 
 .footer {
