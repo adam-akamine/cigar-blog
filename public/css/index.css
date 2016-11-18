@@ -86,7 +86,22 @@ h4 {
 .navbar-default {
   margin: 0 auto;
   z-index: 500;
-  width: 100vw; }
+  width: 100vw;
+  background-color: #0f0e0d;
+  color: white;
+  text-align: center; }
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  color: white; }
+
+.navbar-default .navbar-nav > li > a {
+  color: white; }
+
+.navbar .navbar-collapse {
+  text-align: center;
+  color: white; }
 
 .mainContainer {
   flex: 1; }
@@ -128,11 +143,3 @@ h4 {
   @media only screen and (min-width: 200px) and (max-width: 760px) {
     .footer {
       display: none; } }
-
-.navbar-default .navbar-toggle {
-  border-color: #888;
-  animation-name: borderBlue;
-  animation-duration: 3s;
-  animation-delay: 3.5s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite; }
