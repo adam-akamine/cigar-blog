@@ -70,7 +70,7 @@ body {
   flex-direction: column;
   color: white;
   background-color: #070707;
-  overflow: hidden; }
+  overflow-x: hidden; }
 
 h1 {
   font-size: 4em; }
@@ -128,7 +128,8 @@ h6 {
   color: white; }
 
 .mainContainer {
-  flex: 1; }
+  flex: 1;
+  width: 100vw; }
 
 .welcomeMessageContainer {
   height: 100vh;
@@ -156,15 +157,9 @@ h6 {
 
 .footer {
   font-family: 'Montserrat', sans-serif;
-  position: absolute;
-  right: 2px;
-  bottom: 0px;
   z-index: 2000;
   width: 100%;
   text-align: center;
-  padding: 1rem;
-  color: rgba(255, 255, 255, 0.619608);
-  opacity: 0.6; }
-  @media only screen and (min-width: 200px) and (max-width: 760px) {
-    .footer {
-      display: none; } }
+  color: white;
+  padding: 20px;
+  margin-top: 40px; }

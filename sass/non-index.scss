@@ -22,7 +22,7 @@ body {
   flex-direction: column;
   color: white;
   background-color: $black-color;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -94,6 +94,7 @@ h6 {
 
 .mainContainer {
   flex: 1;
+  width: 100vw;
 }
 .welcomeMessageContainer {
   height: 100vh;
@@ -123,17 +124,10 @@ h6 {
 
 .footer {
   font-family: 'Montserrat', sans-serif;
-  position: absolute;
-  right: 2px;
-  bottom: 0px;
   z-index: 2000;
   width: 100%;
   text-align: center;
-  padding: 1rem;
-  color: $lightgray-color;
-  opacity: 0.6;
-
-  @include small {
-    display: none;
-  }
+  color: white;
+  padding: 20px;
+  margin-top: 40px;
 }
