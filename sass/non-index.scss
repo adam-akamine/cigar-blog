@@ -17,7 +17,7 @@ $small: "only screen and (min-width: 200px) and (max-width: 760px)";
 
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'PT Serif', serif;
   display: flex;
   flex-direction: column;
   color: white;
@@ -112,12 +112,10 @@ h6 {
 .welcomeMessage{
   box-sizing: border-box;
   text-align: center;
-  position: absolute;
   margin-right: auto;
   margin-left: auto;
   width: 100vw;
   padding: 10px;
-  top: 30%;
   text-shadow: 2px 2px black;
   color: white;
 }
