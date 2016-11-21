@@ -16,6 +16,10 @@ app.get('/reviews', function(req, res) {
   res.render('reviews');
 })
 
+app.get('/reviews/new', function(req, res) {
+  res.render('newReview');
+})
+
 var server = app.listen(3000, function () {
   console.log("App listening on port " + server.address().port);
 });

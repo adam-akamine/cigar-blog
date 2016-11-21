@@ -96,7 +96,7 @@ h6 {
   flex: 1;
   width: 100vw;
 }
-.welcomeMessageContainer {
+.welcomeMessageContainer, .addContainer {
   height: 100vh;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -109,7 +109,7 @@ h6 {
   background-repeat: repeat, no-repeat;
 }
 
-.welcomeMessage{
+.welcomeMessage, .addTitle{
   box-sizing: border-box;
   text-align: center;
   margin-right: auto;
