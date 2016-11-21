@@ -39,6 +39,15 @@ app.post('/reviews', function(req, res) {
         return Pics.create({fileName: result.url})
         .then(function(cloudPic) {
           Reviews.create({
+            author: fields.author[0],
+            cigarName: fields.cigarName[0],
+            brand: fields.brand[0],
+            size: fields.size[0],
+            shape: fields.shape[0],
+            price: fields.price[0],
+            flavors: fields.flavors[0],
+            smokeTime: fields.smokeTime[0],
+            grade: fields.grade[0],
             pic_id: cloudPic.id,
 
           })

@@ -38,7 +38,7 @@ module.exports = {
       smokeTime: {
         type: Sequelize.STRING
       },
-      stars: {
+      grade: {
         type: Sequelize.INTEGER
       },
       picFileName: {
