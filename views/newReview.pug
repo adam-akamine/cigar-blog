@@ -70,10 +70,24 @@ html(lang='en')
             .form-group
               label.btn.btn-default.btn-file(for='pic')
               | Upload photo
-              input#pic(type='file', name='pic', onchange='previewFile()')
-            img#upload-file-info.label.label-info
+              input#pic(style="display:none", type='file', name='pic', onchange='previewFile()')
+              img#upload-file-info.label.label-info(style="display:none")
 
       .footer
         | A cigar blog by Adam Akamine. © 2016. All Rights Reserved.
+    script.
+      function previewFile() {
+        console.log("Adding pic");
+        var preview = document.getElementById("upload-file-info");
+        var file = document.querySelector('input[type=file]').files[0];
+        var reader  = new FileReader();
+        reader.addEventListener("load", function () {
+        preview.src = reader.result;
+        preview.setAttribute("style", "");
+        }, false);
+        if (file) {
+        reader.readAsDataURL(file);
+        }
+      }
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')

@@ -130,6 +130,18 @@ h6 {
   font-size: 1.25em;
   margin-bottom: 3px;
 }
+
+.label-info {
+  background-color: transparent;
+}
+#upload-file-info {
+  display: initial;
+  width: 50%;
+}
+#yourInfo {
+  display: none;
+}
+
 .footer {
   font-family: 'Montserrat', sans-serif;
   z-index: 2000;

@@ -29,6 +29,10 @@ app.get('/reviews/new', function(req, res) {
   res.render('newReview');
 })
 
+app.get('/successReview', function(req, res) {
+  res.render('successReview');
+})
+
 app.post('/reviews', function(req, res) {
   var form = new multiparty.Form();
   form.parse(req, function(err, fields, files) {
@@ -40,16 +44,20 @@ app.post('/reviews', function(req, res) {
         .then(function(cloudPic) {
           Reviews.create({
             author: fields.author[0],
+            reviewText: fields.reviewText[0],
+            reviewDate: fields.reviewDate[0],
             cigarName: fields.cigarName[0],
             brand: fields.brand[0],
             size: fields.size[0],
             shape: fields.shape[0],
             price: fields.price[0],
             flavors: fields.flavors[0],
-            smokeTime: fields.smokeTime[0],
             grade: fields.grade[0],
-            pic_id: cloudPic.id,
-
+            smokeTime: fields.smokeTime[0],
+            picFileName: cloudPic.id
+          })
+          .then(function(review) {
+            return res.render('successReview');
           })
         })
       })
