@@ -159,7 +159,8 @@ h6 {
   width: 65%; }
 
 .form-group label {
-  font-size: 1.25em; }
+  font-size: 1.25em;
+  margin-bottom: 3px; }
 
 .footer {
   font-family: 'Montserrat', sans-serif;
