@@ -13,6 +13,7 @@ module.exports = function(sequelize, DataTypes) {
     flavors: DataTypes.STRING,
     smokeTime: DataTypes.STRING,
     stars: DataTypes.INTEGER,
+    picFileName: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {

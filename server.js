@@ -38,7 +38,10 @@ app.post('/reviews', function(req, res) {
       cloudinary.uploader.upload(files.pic[0].path, function (result) {
         return Pics.create({fileName: result.url})
         .then(function(cloudPic) {
+          Reviews.create({
+            pic_id: cloudPic.id,
 
+          })
         })
       })
     }

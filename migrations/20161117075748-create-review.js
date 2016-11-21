@@ -41,6 +41,9 @@ module.exports = {
       stars: {
         type: Sequelize.INTEGER
       },
+      picFileName: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
