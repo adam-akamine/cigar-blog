@@ -20,7 +20,7 @@ module.exports = {
       cigarName: {
         type: Sequelize.STRING
       },
-      blender: {
+      brand: {
         type: Sequelize.STRING
       },
       size: {

@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
     reviewText: DataTypes.TEXT,
     reviewDate: DataTypes.DATE,
     cigarName: DataTypes.STRING,
-    blender: DataTypes.STRING,
+    brand: DataTypes.STRING,
     size: DataTypes.STRING,
     shape: DataTypes.STRING,
     price: DataTypes.STRING,
