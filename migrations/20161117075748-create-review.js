@@ -8,17 +8,38 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      author_id: {
-        type: Sequelize.INTEGER
-      },
-      cigar_id: {
-        type: Sequelize.INTEGER
+      author: {
+        type: Sequelize.STRING
       },
       reviewText: {
         type: Sequelize.TEXT
       },
       reviewDate: {
         type: Sequelize.DATE
+      },
+      cigarName: {
+        type: Sequelize.STRING
+      },
+      blender: {
+        type: Sequelize.STRING
+      },
+      size: {
+        type: Sequelize.STRING
+      },
+      shape: {
+        type: Sequelize.STRING
+      },
+      price: {
+        type: Sequelize.STRING
+      },
+      flavors: {
+        type: Sequelize.TEXT
+      },
+      smokeTime: {
+        type: Sequelize.STRING
+      },
+      stars: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
