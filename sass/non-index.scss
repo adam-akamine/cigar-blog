@@ -120,6 +120,15 @@ h6 {
   color: white;
 }
 
+.formContainer {
+  text-align: left;
+  margin: 0 auto;
+  width: 65%;
+}
+
+.form-group label {
+  font-size: 1.25em;
+}
 .footer {
   font-family: 'Montserrat', sans-serif;
   z-index: 2000;

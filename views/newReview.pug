@@ -12,10 +12,10 @@ html(lang='en')
       .container-fluid
         .navbar-header
           button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false')
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
+            .sr-only Toggle navigation
+            .icon-bar
+            .icon-bar
+            .icon-bar
           a.navbar-brand(href='#')
         // Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
@@ -32,40 +32,41 @@ html(lang='en')
       .addContainer
         .addTitle
           h1 Add a Review
-        form(action="/reviews", method="POST", id="addReviewForm")
-          div.input
-            span.label Cigar Name
-            input(type="text", name="cigarName")
-          div.input
-            span.label Author
-            input(type="text", name="cigarReviewAuthor")
-          div.input
-            span.label Brand
-            input(type="text", name="cigarBrand")
-          div.input
-            span.label Size
-            input(type="text", name="cigarSize")
-          div.input
-            span.label Shape
-            input(type="text", name="cigarShape")
-          div.input
-            span.label Price at time of review
-            input(type="text", name="cigarPrice")
-          div.input
-            span.label Flavors
-            input(type="text", name="cigarFlavors")
-          div.input
-            span.label Smoke Time
-            input(type="text", name="cigarSmokeTime")
-          div.input
-            span.label Grade
-            input(type="text", name="cigarGrade")
-          div.input
-            span.label Review Date
-            input(type="date", name="cigarReviewDate")
-          div.input
-            span.label Review Text
-            input(type="text", name="cigarReviewText")
+        .formContainer
+          form(action="/reviews", method="POST", id="addReviewForm")
+            .form-group
+              label Cigar Name
+              input.form-control(type="text", name="cigarName")
+            .form-group
+              label Author
+              input.form-control(type="text", name="cigarReviewAuthor")
+            .form-group
+              label Brand
+              input.form-control(type="text", name="cigarBrand")
+            .form-group
+              label Size
+              input.form-control(type="text", name="cigarSize")
+            .form-group
+              label Shape
+              input.form-control(type="text", name="cigarShape")
+            .form-group
+              label Price at time of review
+              input.form-control(type="text", name="cigarPrice")
+            .form-group
+              label Flavors
+              input.form-control(type="text", name="cigarFlavors")
+            .form-group
+              label Smoke Time
+              input.form-control(type="text", name="cigarSmokeTime")
+            .form-group
+              label Grade
+              input.form-control(type="text", name="cigarGrade")
+            .form-group
+              label Review Date
+              input.form-control(type="date", name="cigarReviewDate")
+            .form-group
+              label Review Text
+              input.form-control(type="text", name="cigarReviewText")
       .footer
         | A cigar blog by Adam Akamine. © 2016. All Rights Reserved.
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
