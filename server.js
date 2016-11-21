@@ -1,6 +1,7 @@
 var pug = require('pug');
 var path = require('path');
 var express = require('express');
+var multiparty = require('multiparty');
 
 var app = express();
 app.set('views', path.resolve(__dirname, 'views'));
@@ -18,6 +19,10 @@ app.get('/reviews', function(req, res) {
 
 app.get('/reviews/new', function(req, res) {
   res.render('newReview');
+})
+
+app.post('/reviews', function(req, res) {
+
 })
 
 var server = app.listen(3000, function () {

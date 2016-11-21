@@ -18,9 +18,11 @@
   },
   "homepage": "https://github.com/kekuso/cigar-blog#readme",
   "dependencies": {
+    "cloudinary": "^1.4.4",
     "express": "^4.14.0",
     "gulp": "^3.9.1",
     "init": "^0.1.2",
+    "multiparty": "^4.1.2",
     "pg": "^6.1.0",
     "pug": "^2.0.0-beta6",
     "sequelize": "^3.25.0",
