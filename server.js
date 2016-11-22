@@ -5,6 +5,7 @@ var multiparty = require('multiparty');
 var cloudinary = require('cloudinary');
 var cloudConfig = require('./config/cloudConfig');
 var db = require('./models');
+var dateFormat = require('dateformat');
 
 var app = express();
 app.set('views', path.resolve(__dirname, 'views'));
@@ -12,7 +13,8 @@ app.set('view engine', 'pug');
 
 app.use(express.static('public'));
 
-var Review = db.Review;
+var Reviews = db.Reviews;
+var Pics = db.Pics;
 cloudinary.config({
   cloud_name: cloudConfig.name,
   api_key: cloudConfig.key,
@@ -41,10 +43,13 @@ app.post('/reviews', function(req, res) {
     if(err)
       throw err;
     if(files.pic[0].size) {
+      console.log(files);
       cloudinary.uploader.upload(files.pic[0].path, function (result) {
         return Pics.create({fileName: result.url})
         .then(function(cloudPic) {
+          console.log(fields);
           Reviews.create({
+            picFileName: cloudPic.id,
             author: fields.author[0],
             reviewText: fields.reviewText[0],
             reviewDate: fields.reviewDate[0],
@@ -54,9 +59,8 @@ app.post('/reviews', function(req, res) {
             shape: fields.shape[0],
             price: fields.price[0],
             flavors: fields.flavors[0],
-            grade: fields.grade[0],
             smokeTime: fields.smokeTime[0],
-            picFileName: cloudPic.id
+            grade: fields.grade[0]
           })
           .then(function(review) {
             return res.render('successReview');

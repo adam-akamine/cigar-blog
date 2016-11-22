@@ -19,6 +19,7 @@
   "homepage": "https://github.com/kekuso/cigar-blog#readme",
   "dependencies": {
     "cloudinary": "^1.4.4",
+    "dateformat": "^1.0.12",
     "express": "^4.14.0",
     "gulp": "^3.9.1",
     "init": "^0.1.2",

@@ -48,7 +48,7 @@ module.exports = {
         }
       },
       grade: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

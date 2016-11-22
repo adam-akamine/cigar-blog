@@ -33,45 +33,46 @@ html(lang='en')
         .addTitle
           h1 Add a Review
         .formContainer
-          form(action="/reviews", method="POST", id="addReviewForm")
+          form(action="/reviews", method="POST", id="addReviewForm", enctype="multipart/form-data")
             .form-group
               label Cigar Name
               input.form-control(type="text", name="cigarName")
             .form-group
               label Author
-              input.form-control(type="text", name="cigarReviewAuthor")
+              input.form-control(type="text", name="author")
             .form-group
               label Brand
-              input.form-control(type="text", name="cigarBrand")
+              input.form-control(type="text", name="brand")
             .form-group
               label Size
-              input.form-control(type="text", name="cigarSize")
+              input.form-control(type="text", name="size")
             .form-group
               label Shape
-              input.form-control(type="text", name="cigarShape")
+              input.form-control(type="text", name="shape")
             .form-group
               label Price at time of review
-              input.form-control(type="text", name="cigarPrice")
+              input.form-control(type="text", name="price")
             .form-group
               label Flavors
-              input.form-control(type="text", name="cigarFlavors")
+              input.form-control(type="text", name="flavors")
             .form-group
               label Smoke Time
-              input.form-control(type="text", name="cigarSmokeTime")
+              input.form-control(type="text", name="smokeTime")
             .form-group
               label Grade
-              input.form-control(type="text", name="cigarGrade")
+              input.form-control(type="text", name="grade")
             .form-group
               label Review Date
-              input.form-control(type="date", name="cigarReviewDate")
+              input.form-control(type="date", name="reviewDate")
             .form-group
               label Review Text
-              textarea.form-control(rows="10", type="text", name="cigarReviewText")
+              textarea.form-control(rows="10", type="text", name="reviewText")
             .form-group
               label.btn.btn-default.btn-file(for='pic')
               | Upload photo
               input#pic(style="display:none", type='file', name='pic', onchange='previewFile()')
               img#upload-file-info.label.label-info(style="display:none")
+            button.btn.btn-primary(type="submit", value="Submit") Submit
 
       .footer
         | A cigar blog by Adam Akamine. © 2016. All Rights Reserved.

@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
     price: DataTypes.STRING,
     flavors: DataTypes.STRING,
     smokeTime: DataTypes.STRING,
-    grade: DataTypes.INTEGER
+    grade: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {
