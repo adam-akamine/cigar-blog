@@ -4,6 +4,7 @@ var express = require('express');
 var multiparty = require('multiparty');
 var cloudinary = require('cloudinary');
 var cloudConfig = require('./config/cloudConfig');
+var db = require('./models');
 
 var app = express();
 app.set('views', path.resolve(__dirname, 'views'));
@@ -11,6 +12,7 @@ app.set('view engine', 'pug');
 
 app.use(express.static('public'));
 
+var Review = db.Review;
 cloudinary.config({
   cloud_name: cloudConfig.name,
   api_key: cloudConfig.key,

@@ -38,11 +38,17 @@ module.exports = {
       smokeTime: {
         type: Sequelize.STRING
       },
+      picFileName: {
+        type:Sequelize.INTEGER,
+          allowNull: true,
+          foreignKey: true,
+          references:{
+            model: "Pics",
+            key: "id"
+        }
+      },
       grade: {
         type: Sequelize.INTEGER
-      },
-      picFileName: {
-        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

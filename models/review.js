@@ -1,6 +1,6 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var Review = sequelize.define('Review', {
+  var Reviews = sequelize.define('Reviews', {
     author: DataTypes.STRING,
     cigarName: DataTypes.STRING,
     reviewText: DataTypes.TEXT,
@@ -12,14 +12,16 @@ module.exports = function(sequelize, DataTypes) {
     price: DataTypes.STRING,
     flavors: DataTypes.STRING,
     smokeTime: DataTypes.STRING,
-    grade: DataTypes.INTEGER,
-    picFileName: DataTypes.STRING
+    grade: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {
-
+        models.Reviews.belongsTo(models.Pics, {
+          foreignKey: 'picFileName',
+          as: 'pic'
+        });
       }
     }
   });
-  return Review;
+  return Reviews;
 };
