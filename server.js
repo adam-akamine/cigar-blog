@@ -26,8 +26,17 @@ app.get('/', function(req, res) {
 })
 
 app.get('/reviews', function(req, res) {
-  res.render('reviews');
-})
+  Reviews.findAll({
+    order:'id ASC',
+    limit: 9,
+    include: {
+      model: Pics,
+      as: 'pic',
+    }
+  }).then(function(review) {
+      res.render('reviews', {json: review});
+  });
+});
 
 app.get('/reviews/new', function(req, res) {
   res.render('newReview');
@@ -43,11 +52,12 @@ app.post('/reviews', function(req, res) {
     if(err)
       throw err;
     if(files.pic[0].size) {
-      console.log(files);
+      // console.log(files);
       cloudinary.uploader.upload(files.pic[0].path, function (result) {
         return Pics.create({fileName: result.url})
         .then(function(cloudPic) {
-          console.log(fields);
+          // console.log(fields);
+          console.log(result.url);
           Reviews.create({
             picFileName: cloudPic.id,
             author: fields.author[0],
