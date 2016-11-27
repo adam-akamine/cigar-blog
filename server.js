@@ -61,7 +61,7 @@ app.get('/reviews/:id', function(req, res) {
       console.log("Review not found");
       res.send("Review not found.");
     }
-    console.log(review);
+    console.log(review.reviewText);
     res.render('fullReview', {json: review});
   });
 });
