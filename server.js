@@ -6,12 +6,15 @@ var cloudinary = require('cloudinary');
 var cloudConfig = require('./config/cloudConfig');
 var db = require('./models');
 var dateFormat = require('dateformat');
+var bodyParser = require('body-parser');
 
 var app = express();
 app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 var Reviews = db.Reviews;
 var Pics = db.Pics;
@@ -45,6 +48,11 @@ app.get('/reviews/new', function(req, res) {
 app.get('/successReview', function(req, res) {
   res.render('successReview');
 })
+
+app.get('/reviews/:id', function(req, res) {
+
+  res.render()
+});
 
 app.post('/reviews', function(req, res) {
   var form = new multiparty.Form();
