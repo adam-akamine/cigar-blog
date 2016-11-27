@@ -50,7 +50,8 @@ app.get('/successReview', function(req, res) {
 })
 
 app.get('/reviews/:id', function(req, res) {
-  var reviewId = parseInt(req.params.id);
+  var reviewId = parseInt(req.params.id) + 2;
+  console.log("ID: " + reviewId);
   Reviews.findOne({
     where: {
       id: reviewId
@@ -60,6 +61,7 @@ app.get('/reviews/:id', function(req, res) {
       console.log("Review not found");
       res.send("Review not found.");
     }
+    console.log(review);
     res.render('fullReview', {json: review});
   });
 });
