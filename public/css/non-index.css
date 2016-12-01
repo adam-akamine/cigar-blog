@@ -151,7 +151,8 @@ h6 {
   width: 100vw;
   padding: 10px;
   text-shadow: 2px 2px black;
-  color: white; }
+  color: white;
+  margin-bottom: 25px; }
 
 .formContainer {
   text-align: left;

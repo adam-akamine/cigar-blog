@@ -38,7 +38,11 @@ app.get('/reviews', function(req, res) {
       as: 'pic',
     }
   }).then(function(review) {
-      res.render('reviews', {json: review});
+    console.log(review);
+    for(var i = 0; i < review.length; i++) {
+      review[i].dataValues.reviewDate = dateFormat(review[i].dataValues.reviewDate, "mmmm dS, yyyy");
+    }
+    res.render('reviews', {json: review});
   });
 });
 
@@ -62,7 +66,7 @@ app.get('/reviews/:id', function(req, res) {
       console.log("Review not found");
       res.send("Review not found.");
     }
-    var formattedDate = dateFormat(review.reviewDate, "mmmm dS, yyyy")
+    var formattedDate = dateFormat(review.reviewDate, "mmmm dS, yyyy");
     res.render('fullReview', {json: review, reviewDate: formattedDate});
   });
 });
