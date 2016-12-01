@@ -34,7 +34,7 @@ html(lang='en')
           h2 #{json.cigarName} Review
           h4 by #{json.author}
           h5 #{reviewDate}
-          h6 Shape: #{json.shape} Size: #{json.size}
+          h6 #{json.shape}, #{json.size}, #{json.price}
           .reviewTextContainer
             .reviewText #{json.reviewText}
       .footer
