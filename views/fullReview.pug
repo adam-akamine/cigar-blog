@@ -37,8 +37,9 @@ html(lang='en')
           h6 #{json.shape}, #{json.size}, #{json.price}
           .reviewTextContainer
             .reviewText #{json.reviewText}
+            .flavors Flavors: #{json.flavors}
             .finalReview Final Review: #{json.grade} / 5 stars
-      .footer
-        | A cigar blog by Adam Akamine. © 2016. All Rights Reserved.
+        .footer
+          | A cigar blog by Adam Akamine. © 2016. All Rights Reserved.
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
