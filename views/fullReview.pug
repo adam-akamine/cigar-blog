@@ -30,13 +30,12 @@ html(lang='en')
               a(href='/contact') CONTACT
     .mainContainer
       .welcomeMessageContainer
-        .welcomeMessage
-          h1 Reviews
-          .singleReview
-            h2 #{json.cigarName} Review
-            h3 by #{json.author}
-            h4 #{json.reviewDate}
-            h5 Shape: #{json.shape} Size: #{json.size}
+        .singleReview
+          h2 #{json.cigarName} Review
+          h4 by #{json.author}
+          h5 #{json.reviewDate}
+          h6 Shape: #{json.shape} Size: #{json.size}
+          .reviewTextContainer
             .reviewText #{json.reviewText}
       .footer
         | A cigar blog by Adam Akamine. © 2016. All Rights Reserved.
