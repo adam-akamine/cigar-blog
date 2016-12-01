@@ -7,6 +7,7 @@ var cloudConfig = require('./config/cloudConfig');
 var db = require('./models');
 var dateFormat = require('dateformat');
 var bodyParser = require('body-parser');
+var dateFormat = require('dateformat');
 
 var app = express();
 app.set('views', path.resolve(__dirname, 'views'));
@@ -61,8 +62,8 @@ app.get('/reviews/:id', function(req, res) {
       console.log("Review not found");
       res.send("Review not found.");
     }
-    console.log(review.reviewText);
-    res.render('fullReview', {json: review});
+    var formattedDate = dateFormat(review.reviewDate, "mmmm dS, yyyy")
+    res.render('fullReview', {json: review, reviewDate: formattedDate});
   });
 });
 
