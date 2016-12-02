@@ -23,11 +23,7 @@ html(lang='en')
             li
               a(href='/') HOME
             li
-              a(href='/about') ABOUT
-            li
               a(href="/reviews") REVIEWS
-            li
-              a(href='/contact') CONTACT
     .mainContainer
       .welcomeMessageContainer
         .welcomeMessage
@@ -35,7 +31,7 @@ html(lang='en')
         each val in json
           .review.col-md-5
             a(href="/reviews/" + (val.id - 2))
-              h2.reviewTitle #{val.cigarName} Review
+              h2.reviewTitle #{val.cigarName}
             h3 by #{val.author}
             h4 #{val.reviewDate}
             h5 Shape: #{val.shape} Size: #{val.size}

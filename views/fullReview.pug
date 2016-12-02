@@ -23,17 +23,13 @@ html(lang='en')
             li
               a(href='/') HOME
             li
-              a(href='/about') ABOUT
-            li
               a(href="/reviews") REVIEWS
-            li
-              a(href='/contact') CONTACT
     .mainContainer
       .welcomeMessageContainer
         .singleReview
           h2 #{json.cigarName} Review
-          h4 by #{json.author}
-          h5 #{reviewDate}
+          h6 by #{json.author}
+          h6 #{reviewDate}
           h6 #{json.shape}, #{json.size}, #{json.price}
           .reviewTextContainer
             .reviewText #{json.reviewText}
