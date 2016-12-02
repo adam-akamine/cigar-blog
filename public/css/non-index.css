@@ -184,6 +184,10 @@ h6 {
   font-size: 1.5em;
   text-align: center; }
 
+.showPicture {
+  width: 80vw;
+  height: 300px; }
+
 .reviewTextContainer {
   margin: 0 auto;
   width: 75%; }

@@ -55,17 +55,22 @@ app.get('/successReview', function(req, res) {
 })
 
 app.get('/reviews/:id', function(req, res) {
-  var reviewId = parseInt(req.params.id) + 2;
+  var reviewId = parseInt(req.params.id);
   console.log("ID: " + reviewId);
   Reviews.findOne({
     where: {
       id: reviewId
-    }
+    },
+    include: [{
+      model: Pics,
+      as: 'pic'
+    }]
   }).then(function (review) {
     if(!review) {
       console.log("Review not found");
       res.render('404');
     }
+    console.log(review.dataValues)
     var formattedDate = dateFormat(review.reviewDate, "mmmm dS, yyyy");
     res.render('fullReview', {json: review, reviewDate: formattedDate});
   });
@@ -83,8 +88,11 @@ app.post('/reviews', function(req, res) {
     if(files.pic[0].size) {
       // console.log(files);
       cloudinary.uploader.upload(files.pic[0].path, function (result) {
-        return Pics.create({fileName: result.url})
+        console.log("files.pic[0].path");
+        console.log(files.pic[0].path);
+        return Pics.create({filename: result.url})
         .then(function(cloudPic) {
+          console.log
           // console.log(fields);
           console.log(result.url);
           Reviews.create({

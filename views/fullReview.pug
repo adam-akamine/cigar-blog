@@ -31,6 +31,8 @@ html(lang='en')
           h6 by #{json.author}
           h6 #{reviewDate}
           h6 #{json.shape}, #{json.size}, #{json.price}
+          .cigarPic
+            img.showPicture(src= json.pic.dataValues.filename)
           .reviewTextContainer
             .reviewText #{json.reviewText}
             .flavors Flavors: #{json.flavors}

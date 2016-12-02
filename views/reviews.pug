@@ -30,7 +30,7 @@ html(lang='en')
           h1 Reviews
         each val in json
           .review.col-md-5
-            a(href="/reviews/" + (val.id - 2))
+            a(href="/reviews/" + (val.id))
               h2.reviewTitle #{val.cigarName}
             h3 by #{val.author}
             h4 #{val.reviewDate}
