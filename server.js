@@ -64,7 +64,7 @@ app.get('/reviews/:id', function(req, res) {
   }).then(function (review) {
     if(!review) {
       console.log("Review not found");
-      res.send("Review not found.");
+      res.render('404');
     }
     var formattedDate = dateFormat(review.reviewDate, "mmmm dS, yyyy");
     res.render('fullReview', {json: review, reviewDate: formattedDate});
