@@ -71,6 +71,10 @@ app.get('/reviews/:id', function(req, res) {
   });
 });
 
+app.get('/404', function(req, res) {
+  res.render('404');
+})
+
 app.post('/reviews', function(req, res) {
   var form = new multiparty.Form();
   form.parse(req, function(err, fields, files) {
@@ -104,6 +108,10 @@ app.post('/reviews', function(req, res) {
       })
     }
   })
+})
+
+app.get('*', function(req, res) {
+  res.render('404');
 })
 
 var server = app.listen(3000, function () {
