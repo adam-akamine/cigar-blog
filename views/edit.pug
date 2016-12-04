@@ -1,0 +1,74 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8', ,='', name='viewport', content='width=device-width, initial-scale=1')
+    title New Review
+    // Bootstrap CDN
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/css/non-index.css')
+    link(href='https://fonts.googleapis.com/css?family=Roboto|PT+Serif', rel='stylesheet')
+  body
+    nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false')
+            .sr-only Toggle navigation
+            .icon-bar
+            .icon-bar
+            .icon-bar
+          a.navbar-brand(href='#')
+        // Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a(href='/') HOME
+            li
+              a(href="/reviews") REVIEWS
+    .mainContainer
+      .addContainer
+        .addTitle
+          h1 Add a Review
+        .formContainer
+          form(action="/reviews/" + id + "/edit?_method=put", method="POST", id="addReviewForm")
+            .form-group
+              label Cigar Name
+              input.form-control(type="text", name="cigarName", value=json.cigarName)
+            .form-group
+              label Author
+              input.form-control(type="text", name="author", value=json.author)
+            .form-group
+              label Brand
+              input.form-control(type="text", name="brand", value=json.brand)
+            .form-group
+              label Size
+              input.form-control(type="text", name="size", value=json.size)
+            .form-group
+              label Shape
+              input.form-control(type="text", name="shape", value=json.shape)
+            .form-group
+              label Price at time of review
+              input.form-control(type="text", name="price", value=json.price)
+            .form-group
+              label Flavors
+              input.form-control(type="text", name="flavors", value=json.flavors)
+            .form-group
+              label Smoke Time
+              input.form-control(type="text", name="smokeTime", value=json.smokeTime)
+            .form-group
+              label Grade
+              input.form-control(type="text", name="grade", value=json.grade)
+            .form-group
+              label Review Date
+              input.form-control(type="text", name="reviewDate", placeholder=json.reviewDate, value=json.reviewDate, onfocus="(this.type='date')")
+            .form-group
+              label Review Text
+              textarea.form-control(rows="10", type="text", name="reviewText") #{json.reviewText}
+            .form-group
+              label(for="picFileName") Cloudinary Photo URL
+              input.form-control(type="text", name="picFileName")
+            button.btn.btn-primary(type="submit", value="Submit") Submit
+
+      .footer
+        | A cigar blog by Adam Akamine. © 2016. All Rights Reserved.
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')

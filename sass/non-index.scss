@@ -7,10 +7,25 @@ $lightgray-color: rgba(255, 255, 255, 0.619608);
 
 // media query ranges
 $small: "only screen and (min-width: 200px) and (max-width: 760px)";
+$medium: "only screen and (min-width: 761px) and (max-width: 900px)";
+$large: "only screen and (min-width: 901px) and (max-width: 1250px)";
+$xlarge: "only screen and (min-width: 1251px)";
 
 // Mixins
 @mixin small {
   @media #{$small} {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media #{$medium} {
+    @content;
+  }
+}
+
+@mixin large {
+  @media #{$large} {
     @content;
   }
 }
@@ -157,9 +172,23 @@ h6 {
 }
 
 .showPicture {
-  width: 80vw;
-  height: 300px;
+  width: 40%;
+  height: 400px;
   margin-top: 25px;
+
+  @include large {
+    width: 70%;
+    height: 400px;
+  }
+
+  @include medium {
+    width: 60%;
+    height: 300px;
+  }
+
+  @include small {
+    width: 75%;
+  }
 }
 .reviewTextContainer {
   margin: 0 auto;

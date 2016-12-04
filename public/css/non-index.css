@@ -185,9 +185,20 @@ h6 {
   text-align: center; }
 
 .showPicture {
-  width: 80vw;
-  height: 300px;
+  width: 40%;
+  height: 400px;
   margin-top: 25px; }
+  @media only screen and (min-width: 901px) and (max-width: 1250px) {
+    .showPicture {
+      width: 70%;
+      height: 400px; } }
+  @media only screen and (min-width: 761px) and (max-width: 900px) {
+    .showPicture {
+      width: 60%;
+      height: 300px; } }
+  @media only screen and (min-width: 200px) and (max-width: 760px) {
+    .showPicture {
+      width: 75%; } }
 
 .reviewTextContainer {
   margin: 0 auto;

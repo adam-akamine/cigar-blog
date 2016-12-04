@@ -8,12 +8,14 @@ var db = require('./models');
 var dateFormat = require('dateformat');
 var bodyParser = require('body-parser');
 var dateFormat = require('dateformat');
+var methodOverride = require('method-override');
 
 var app = express();
 app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use(express.static('public'));
+app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
@@ -88,13 +90,8 @@ app.post('/reviews', function(req, res) {
     if(files.pic[0].size) {
       // console.log(files);
       cloudinary.uploader.upload(files.pic[0].path, function (result) {
-        console.log("files.pic[0].path");
-        console.log(files.pic[0].path);
         return Pics.create({filename: result.url})
         .then(function(cloudPic) {
-          console.log
-          // console.log(fields);
-          console.log(result.url);
           Reviews.create({
             picFileName: cloudPic.id,
             author: fields.author[0],
@@ -117,6 +114,77 @@ app.post('/reviews', function(req, res) {
     }
   })
 })
+
+app.get('/reviews/:id/edit', function(req, res) {
+  var reviewId = parseInt(req.params.id);
+  console.log("ID: " + reviewId);
+  Reviews.findOne({
+    where: {
+      id: reviewId
+    },
+    include: [{
+      model: Pics,
+      as: 'pic'
+    }]
+  }).then(function (review) {
+    if(!review) {
+      console.log("Review not found");
+      res.render('404');
+    }
+    console.log(review.pic.dataValues);
+    var formattedDate = dateFormat(review.reviewDate, "mmmm dS, yyyy");
+    res.render('edit', {json: review, reviewDate: formattedDate, id: parseInt(req.params.id)});
+  });
+});
+
+app.put('/reviews/:id/edit', function(req,res) {
+  var reviewId = parseInt(req.params.id);
+  console.log("ID: " + reviewId);
+  Reviews.findOne({
+    where: {
+      id: parseInt(req.params.id)
+    },
+    include: [{
+      model: Pics,
+      as: 'pic'
+    }]
+  }).then(function(review) {
+    if(!review) {
+      console.log("Review not found");
+      res.render('404');
+    }
+    return review.updateAttributes({
+      picFileName: review.picFileName,
+      author: req.body.author,
+      reviewText: req.body.reviewText,
+      reviewDate: req.body.reviewDate,
+      cigarName: req.body.cigarName,
+      brand: req.body.brand,
+      size: req.body.size,
+      shape: req.body.shape,
+      price: req.body.price,
+      flavors: req.body.flavors,
+      smokeTime: req.body.smokeTime,
+      grade: req.body.grade
+    }).then(function(review) {
+      Pics.findOne({
+        where: {
+          id: review.id
+        }
+      }).then(function(pic) {
+        if(!pic) {
+          console.log("Pic not found");
+          res.render('404');
+        }
+        return pic.updateAttributes({
+          filename: req.body.picFileName
+        })
+      }).then(function(pic) {
+        return res.render('successReview');
+      })
+    })
+  })
+});
 
 app.get('*', function(req, res) {
   res.render('404');

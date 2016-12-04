@@ -24,6 +24,7 @@
     "express-session": "^1.14.2",
     "gulp": "^3.9.1",
     "init": "^0.1.2",
+    "method-override": "^2.3.7",
     "multiparty": "^4.1.2",
     "passport": "^0.3.2",
     "passport-http": "^0.3.0",
