@@ -9,6 +9,11 @@ var dateFormat = require('dateformat');
 var bodyParser = require('body-parser');
 var dateFormat = require('dateformat');
 var methodOverride = require('method-override');
+var session = require('express-session');
+var RedisStore = require('connect-redis')(session);
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var CONFIG = require('./config/config');
 
 var app = express();
 app.set('views', path.resolve(__dirname, 'views'));
