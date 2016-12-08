@@ -50,7 +50,7 @@ passport.use(new LocalStrategy(
     console.log("username: ", username);
     console.log("password: ", password);
     // var isAuthenticated;
-    User.findOne({
+    Users.findOne({
       where: {
         name: username,
         password: password
@@ -72,7 +72,7 @@ passport.serializeUser(function(user, done) {
 }); //this gets saved into session store
 
 passport.deserializeUser(function(id, done) {
-  User.findById(id)
+  Users.findById(id)
     .then(function (user) {
       return done(null, (user && user.toJSON()));
     })
@@ -81,6 +81,11 @@ passport.deserializeUser(function(id, done) {
     });
 }); // this becomes req.user
 
+
+app.get('/', function(req, res) {
+  res.render('index');
+});
+
 function isAuthenticated (req, res, next) {
   if(!req.isAuthenticated()) {
     return res.redirect('/login');
@@ -88,14 +93,20 @@ function isAuthenticated (req, res, next) {
   return next();
 }
 
-app.get('/', function(req, res) {
-  res.render('index');
+app.get('/login', function (req, res) {
+  res.render('login');
 });
 
-app.get('/login', passport.authenticate('local', {
+app.post('/login', passport.authenticate('local', {
   successRedirect: '/secret',
   failureRedirect: '/login'
 }))
+
+app.get('/secret',
+  isAuthenticated,
+  function (req, res) {
+    res.render('secret');
+  });
 
 app.get('/logout', function (req, res) {
   req.logout();
@@ -119,7 +130,9 @@ app.get('/reviews', function(req, res) {
   });
 });
 
-app.get('/reviews/new', function(req, res) {
+app.get('/reviews/new',
+  isAuthenticated,
+  function(req, res) {
   res.render('newReview');
 })
 
