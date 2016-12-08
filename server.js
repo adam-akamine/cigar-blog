@@ -97,6 +97,11 @@ app.get('/login', passport.authenticate('local', {
   failureRedirect: '/login'
 }))
 
+app.get('/logout', function (req, res) {
+  req.logout();
+  res.redirect('/login');
+});
+
 app.get('/reviews', function(req, res) {
   Reviews.findAll({
     order:'id ASC',
