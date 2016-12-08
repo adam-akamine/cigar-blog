@@ -199,7 +199,9 @@ app.post('/reviews', function(req, res) {
   })
 })
 
-app.get('/reviews/:id/edit', function(req, res) {
+app.get('/reviews/:id/edit',
+  isAuthenticated,
+  function(req, res) {
   var reviewId = parseInt(req.params.id);
   console.log("ID: " + reviewId);
   Reviews.findOne({
@@ -221,7 +223,7 @@ app.get('/reviews/:id/edit', function(req, res) {
   });
 });
 
-app.put('/reviews/:id/edit', function(req,res) {
+app.put('/reviews/:id/edit', isAuthenticated, function(req,res) {
   var reviewId = parseInt(req.params.id);
   console.log("ID: " + reviewId);
   Reviews.findOne({
