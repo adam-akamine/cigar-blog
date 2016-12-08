@@ -23,18 +23,79 @@ app.use(express.static('public'));
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(session(
+  {
+    secret: CONFIG.SESSION.secret,
+    saveUninitialized: CONFIG.SESSION.saveUninitialized,
+    resave: CONFIG.SESSION.resave,
+    store : new RedisStore({ttl: 300})
+  })
+);
 
 var Reviews = db.Reviews;
 var Pics = db.Pics;
+var Users = db.Users;
+
 cloudinary.config({
   cloud_name: cloudConfig.name,
   api_key: cloudConfig.key,
   api_secret: cloudConfig.secret
 });
 
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new LocalStrategy(
+  function(username, password, done) {
+    console.log("username: ", username);
+    console.log("password: ", password);
+    // var isAuthenticated;
+    User.findOne({
+      where: {
+        name: username,
+        password: password
+      }
+    }).then(function (user) {
+      if(user) {
+        console.log("user found");
+        return done(null, user);
+      }
+      else {
+        console.log("user not found");
+        return done(null, false);
+      }
+    });
+}));
+
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+}); //this gets saved into session store
+
+passport.deserializeUser(function(id, done) {
+  User.findById(id)
+    .then(function (user) {
+      return done(null, (user && user.toJSON()));
+    })
+    .catch(function(err) {
+      return done(err);
+    });
+}); // this becomes req.user
+
+function isAuthenticated (req, res, next) {
+  if(!req.isAuthenticated()) {
+    return res.redirect('/login');
+  }
+  return next();
+}
+
 app.get('/', function(req, res) {
   res.render('index');
-})
+});
+
+app.get('/login', passport.authenticate('local', {
+  successRedirect: '/secret',
+  failureRedirect: '/login'
+}))
 
 app.get('/reviews', function(req, res) {
   Reviews.findAll({
