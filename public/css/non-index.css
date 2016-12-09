@@ -224,6 +224,12 @@ h6 {
   margin-right: 10vw;
   line-height: 150%; }
 
+.contact {
+  font-size: 1.5em; }
+
+.aboutWelcome {
+  margin-top: 20px; }
+
 .footer {
   font-family: 'Montserrat', sans-serif;
   z-index: 2000;
