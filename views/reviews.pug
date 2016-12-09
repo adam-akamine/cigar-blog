@@ -23,6 +23,8 @@ html(lang='en')
             li
               a(href='/') HOME
             li
+              a(href='/about') ABOUT
+            li
               a(href="/reviews") REVIEWS
     .mainContainer
       .welcomeMessageContainer
@@ -34,7 +36,8 @@ html(lang='en')
               h2.reviewTitle #{val.cigarName}
             h3 by #{val.author}
             h4 #{val.reviewDate}
-            h5 Shape: #{val.shape} Size: #{val.size}
+            h5 Shape: #{val.shape}
+            h5 Size: #{val.size}
       .footer
         | A cigar blog by Adam Akamine. © 2016. All Rights Reserved.
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')

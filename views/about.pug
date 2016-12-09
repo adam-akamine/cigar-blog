@@ -28,18 +28,18 @@ html(lang='en')
               a(href="/reviews") REVIEWS
     .mainContainer
       .welcomeMessageContainer
-        .singleReview
-          h2 #{json.cigarName} Review
-          h6 by #{json.author}
-          h6 #{reviewDate}
-          h6 #{json.shape}, #{json.size}, #{json.price}
-          .cigarPic
-            img.showPicture(src= json.pic.dataValues.filename)
-          .reviewTextContainer
-            .reviewText #{json.reviewText}
-            .flavors Flavors: #{json.flavors}
-            .finalReview Final Review: #{json.grade} / 5 stars
-        .footer
-          | A cigar blog by Adam Akamine. © 2016. All Rights Reserved.
+        .welcomeMessage
+          h1 About
+          h4 More than just a cigar blog...
+        .aboutContent
+          h5 My name is Adam, and I've been smoking cigars since 2013. As a relatively new Cigar Aficionado, I aim to provide my honest, amateur reviews of the cigars I smoke - the full experience, including my random thoughts and musings.
+          h5 Enjoy a glimpse of my not-so-glamorous life made sweeter by the timeless practice of putting fire to hand-rolled tobacco.
+          br
+          h5 Welcome to the Lounge de Roza.
+        .contact
+          h4 Feel free to email me if you have any questions, comments, or feedback.
+
+      .footer
+        | A cigar blog by Adam Akamine. © 2016. All Rights Reserved.
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
