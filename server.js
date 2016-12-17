@@ -28,7 +28,7 @@ app.use(session(
     secret: CONFIG.SESSION.secret,
     saveUninitialized: CONFIG.SESSION.saveUninitialized,
     resave: CONFIG.SESSION.resave,
-    store : new RedisStore({ttl: 300})
+    store : new RedisStore()
   })
 );
 
