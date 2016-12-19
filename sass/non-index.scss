@@ -166,6 +166,10 @@ h6 {
 
 .col-md-5 {
   height: 25vh;
+
+  @include small {
+    height: 45vh;
+  }
 }
 
 .singleReview {

@@ -180,6 +180,9 @@ h6 {
 
 .col-md-5 {
   height: 25vh; }
+  @media only screen and (min-width: 200px) and (max-width: 760px) {
+    .col-md-5 {
+      height: 45vh; } }
 
 .singleReview {
   margin-top: 20px;
