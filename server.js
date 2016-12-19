@@ -115,7 +115,7 @@ app.get('/logout', function (req, res) {
 
 app.get('/reviews', function(req, res) {
   Reviews.findAll({
-    order:'id ASC',
+    order:'id DESC',
     include: {
       model: Pics,
       as: 'pic',
