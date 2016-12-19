@@ -179,10 +179,10 @@ h6 {
   margin-bottom: 5vh; }
 
 .col-md-5 {
-  height: 25vh; }
+  height: 20vh; }
   @media only screen and (min-width: 200px) and (max-width: 760px) {
     .col-md-5 {
-      height: 45vh; } }
+      height: 35vh; } }
 
 .singleReview {
   margin-top: 20px;
