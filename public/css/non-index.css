@@ -175,9 +175,11 @@ h6 {
 
 .review {
   color: white;
-  opacity: 0.9;
   margin-left: 5vw;
   margin-bottom: 5vh; }
+
+.col-md-5 {
+  height: 250px; }
 
 .singleReview {
   margin-top: 20px;
