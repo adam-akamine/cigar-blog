@@ -27,16 +27,15 @@ html(lang='en')
             li
               a(href="/reviews") REVIEWS
     .mainContainer
-      .welcomeMessageContainer
-        .welcomeMessage
-          h1 Reviews
-        each val in json
-          .review.col-md-5
-            a(href="/reviews/" + (val.id))
-              h2.reviewTitle #{val.cigarName}
-            h3 by #{val.author}
-            h4 #{val.reviewDate}
-            h5 Shape: #{val.shape}
-            h5 Size: #{val.size}
+      .welcomeMessage
+        h1 Reviews
+      each val in json
+        .review.col-md-5
+          a(href="/reviews/" + (val.id))
+            h2.reviewTitle #{val.cigarName}
+          h3 by #{val.author}
+          h4 #{val.reviewDate}
+          h5 Shape: #{val.shape}
+          h5 Size: #{val.size}
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
