@@ -6,12 +6,20 @@ $black-color: #0d0c0d;
 $lightgray-color: rgba(255, 255, 255, 0.619608);
 
 // media query ranges
-$small: "only screen and (min-width: 200px) and (max-width: 760px)";
+$xsmall: "only screen and (min-width: 50px) and (max-width: 550px)";
+$small: "only screen and (min-width: 551px) and (max-width: 760px)";
 $medium: "only screen and (min-width: 761px) and (max-width: 900px)";
 $large: "only screen and (min-width: 901px) and (max-width: 1250px)";
 $xlarge: "only screen and (min-width: 1251px)";
 
 // Mixins
+
+@mixin xsmall {
+  @media #{$xsmall} {
+    @content;
+  }
+}
+
 @mixin small {
   @media #{$small} {
     @content;
@@ -180,22 +188,27 @@ h6 {
 
 .showPicture {
   width: 40%;
-  height: 400px;
+  height: 350px;
   margin-top: 25px;
 
   @include large {
-    width: 70%;
-    height: 400px;
+    width: 60%;
+    height: 350px;
   }
 
   @include medium {
-    width: 60%;
+    width: 65%;
     height: 300px;
   }
 
   @include small {
-    width: 75%;
+    width: 60%;
     height: 25vh;
+  }
+
+  @include xsmall {
+    width: 65%;
+    height: 20vh;
   }
 }
 .reviewTextContainer {
