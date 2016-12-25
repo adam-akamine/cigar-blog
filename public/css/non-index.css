@@ -191,25 +191,24 @@ h6 {
 
 .showPicture {
   width: 40%;
-  height: 350px;
-  margin-top: 25px;
-  max-width: 600px; }
+  height: 40%;
+  margin-top: 25px; }
   @media only screen and (min-width: 901px) and (max-width: 1250px) {
     .showPicture {
       width: 60%;
-      height: 350px; } }
+      height: 60%; } }
   @media only screen and (min-width: 761px) and (max-width: 900px) {
     .showPicture {
       width: 65%;
-      height: 300px; } }
+      height: 65%; } }
   @media only screen and (min-width: 551px) and (max-width: 760px) {
     .showPicture {
       width: 60%;
-      height: 30vh; } }
+      height: 60%; } }
   @media only screen and (min-width: 50px) and (max-width: 550px) {
     .showPicture {
       width: 65%;
-      height: 20vh; } }
+      height: 65%; } }
 
 .reviewTextContainer {
   margin: 0 auto;
