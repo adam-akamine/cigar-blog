@@ -32,7 +32,7 @@ html(lang='en')
           h2 #{json.cigarName} Review
           h6 by #{json.author}
           h6 #{reviewDate}
-          h6 #{json.shape}, #{json.size}, #{json.price}
+          h6 #{json.shape}, #{json.size}
           .cigarPic
             a(href=json.pic.dataValues.filename)
               img.showPicture(src= json.pic.dataValues.filename)
