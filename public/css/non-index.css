@@ -192,7 +192,8 @@ h6 {
 .showPicture {
   width: 40%;
   height: 350px;
-  margin-top: 25px; }
+  margin-top: 25px;
+  max-width: 600px; }
   @media only screen and (min-width: 901px) and (max-width: 1250px) {
     .showPicture {
       width: 60%;

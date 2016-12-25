@@ -190,6 +190,7 @@ h6 {
   width: 40%;
   height: 350px;
   margin-top: 25px;
+  max-width: 600px;
 
   @include large {
     width: 60%;

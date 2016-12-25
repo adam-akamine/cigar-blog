@@ -34,7 +34,8 @@ html(lang='en')
           h6 #{reviewDate}
           h6 #{json.shape}, #{json.size}, #{json.price}
           .cigarPic
-            img.showPicture(src= json.pic.dataValues.filename)
+            a(href=json.pic.dataValues.filename)
+              img.showPicture(src= json.pic.dataValues.filename)
           .reviewTextContainer
             .reviewText #{json.reviewText}
             .flavors Flavors: #{json.flavors}
