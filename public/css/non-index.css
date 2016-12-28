@@ -277,11 +277,21 @@ h6 {
 .pagination {
   margin: 0 auto; }
 
-.mainContainer .pagination > li > a {
-  background-color: black;
-  color: white; }
+.pagination > li > a {
+  background-color: #131312;
+  color: white;
+  border: none; }
+
+.pagination > li > a:hover {
+  background-color: #131312;
+  border: none; }
 
 .pagination > li.active > a {
-  background-color: blue;
-  color: white;
-  border-color: white; }
+  background-color: #131312;
+  color: blue;
+  border: none; }
+
+.pagination > li.active > a:hover {
+  background-color: #131312;
+  color: blue;
+  border: none; }
