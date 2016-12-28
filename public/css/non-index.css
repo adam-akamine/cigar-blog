@@ -279,6 +279,6 @@ h6 {
   color: white; }
 
 .pagination > li.active > a {
-  background-color: black;
-  color: blue;
+  background-color: blue;
+  color: white;
   border-color: white; }
