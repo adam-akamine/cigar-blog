@@ -280,4 +280,5 @@ h6 {
 
 .pagination > li.active > a {
   background-color: black;
-  color: blue; }
+  color: blue;
+  border-color: white; }
