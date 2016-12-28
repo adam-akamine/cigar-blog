@@ -67,6 +67,7 @@ table {
 body {
   font-family: 'PT Serif', serif;
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
   color: white;
   background-color: #0d0c0d;
@@ -262,14 +263,16 @@ h6 {
   margin-top: 40px; }
 
 .reviewListFooter {
+  position: fixed;
+  height: 100px;
+  bottom: 0;
   background-color: #131312;
   font-family: 'Montserrat', sans-serif;
-  z-index: 2000;
   width: 100%;
   text-align: center;
   color: white;
-  padding: 5px;
-  margin-top: -25px; }
+  padding-top: 15px;
+  margin-bottom: -20px; }
 
 .pagination {
   margin: 0 auto; }

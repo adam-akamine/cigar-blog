@@ -43,6 +43,7 @@ $xlarge: "only screen and (min-width: 1251px)";
 body {
   font-family: 'PT Serif', serif;
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
   color: white;
   background-color: $black-color;
@@ -261,6 +262,7 @@ h6 {
 .aboutWelcome {
   margin-top: 20px;
 }
+
 .footer {
   font-family: 'Montserrat', sans-serif;
   z-index: 2000;
@@ -272,14 +274,16 @@ h6 {
 }
 
 .reviewListFooter {
+  position: fixed;
+  height: 100px;
+  bottom: 0;
   background-color: $light-black-color;
   font-family: 'Montserrat', sans-serif;
-  z-index: 2000;
   width: 100%;
   text-align: center;
   color: white;
-  padding: 5px;
-  margin-top: -25px;
+  padding-top: 15px;
+  margin-bottom: -20px;
 }
 
 .pagination {

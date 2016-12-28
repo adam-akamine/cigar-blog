@@ -148,7 +148,7 @@ app.get('/reviews/all', function(req, res) {
     for(var i = 0; i < review.length; i++) {
       review[i].dataValues.reviewDate = dateFormat(review[i].dataValues.reviewDate, "mmmm dS, yyyy");
     }
-    res.render('reviews', {json: review});
+    res.render('allReviews', {json: review});
   });
 });
 

@@ -28,20 +28,26 @@ html(lang='en')
               a(href="/reviews") REVIEWS
     .mainContainer
       .welcomeMessageContainer
-        .singleReview
-          h3 #{json.cigarName} Review
-          h6 by #{json.author}
-          h6 #{reviewDate}
-          h6 #{json.shape}, #{json.size}
-          .cigarPic
-            a(href=json.pic.dataValues.filename)
-              img.showPicture(src= json.pic.dataValues.filename)
-          .reviewTextContainer
-            .reviewText #{json.reviewText}
-            .flavors Flavors: #{json.flavors}
-            .price Price: #{json.price}
-            .finalReview Final Review: #{json.grade} / 5 stars
-        .footer
-          | A cigar blog by Adam Akamine. © 2016. All Rights Reserved.
+        .welcomeMessage
+          h1 Reviews
+        each val in json
+          .review.col-md-5
+            a(href="/reviews/" + (val.id))
+              h3.reviewTitle #{val.cigarName}
+            h4 by #{val.author}
+            h5 #{val.reviewDate}
+            h6 Shape: #{val.shape}
+            h6 Size: #{val.size}
+    .reviewListFooter
+      - var n = 1;
+      .pagContainer.text-center
+        ul.pagination
+          while n < totalPages + 1
+            if n===currPage
+              li.active
+                a(href='/reviews/page/' + (n - 1))= n++
+            else
+              li
+                a(href='/reviews/page/' + (n - 1))= n++
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')

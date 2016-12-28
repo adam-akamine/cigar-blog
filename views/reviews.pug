@@ -38,16 +38,17 @@ html(lang='en')
             h5 #{val.reviewDate}
             h6 Shape: #{val.shape}
             h6 Size: #{val.size}
-      .reviewListFooter
-        - var n = 1;
-        .pagContainer.text-center
-          ul.pagination
-            while n < totalPages + 1
-              if n===currPage
-                li.active
-                  a(href='/reviews/page/' + (n - 1))= n++
-              else
-                li
-                  a(href='/reviews/page/' + (n - 1))= n++
+    .reviewListFooter
+      - var n = 1;
+      .pagContainer.text-center
+        ul.pagination
+          while n < totalPages + 1
+            if n===currPage
+              li.active
+                a(href='/reviews/page/' + (n - 1))= n++
+            else
+              li
+                a(href='/reviews/page/' + (n - 1))= n++
+      a(href='/reviews/all') Show All Reviews
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
