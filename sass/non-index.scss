@@ -3,6 +3,7 @@
 @import "sass/partials/_clearfix.scss";
 
 $black-color: #0d0c0d;
+$light-black-color: #131312;
 $lightgray-color: rgba(255, 255, 255, 0.619608);
 
 // media query ranges
@@ -130,6 +131,14 @@ h6 {
   background-position: 0px 0px, 50% 50%;
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
+}
+
+.reviewContiner {
+  height: 100vh;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
 }
 
 .welcomeMessage, .addTitle{
@@ -260,4 +269,28 @@ h6 {
   color: white;
   padding: 20px;
   margin-top: 40px;
+}
+
+.reviewListFooter {
+  background-color: $light-black-color;
+  font-family: 'Montserrat', sans-serif;
+  z-index: 2000;
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 5px;
+  margin-top: -25px;
+}
+
+.pagination {
+  margin: 0 auto;
+}
+.mainContainer .pagination>li>a {
+  background-color: black;
+  color: white;
+}
+
+.pagination>li.active>a {
+  background-color: black;
+  color: blue;
 }

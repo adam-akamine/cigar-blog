@@ -129,6 +129,32 @@ app.get('/reviews', function(req, res) {
   });
 });
 
+app.get('/reviews/page/:id', function(req, res) {
+  var pageNum = parseInt(req.params.id);
+
+  Reviews.findAndCountAll({
+    order:'"reviewDate" DESC',
+    include: {
+      model: Pics,
+      as: 'pic'
+    },
+    offset: pageNum * 6,
+    limit: 6
+  }).then(function(review) {
+    var totalPages = 0;
+    if(review.count % 6 === 0) {
+      totalPages = review.count / 6;
+    }
+    else {
+      totalPages = Math.floor(review.count / 6) + 1;
+    }
+    for(var i = 0; i < review.rows.length; i++) {
+      review.rows[i].dataValues.reviewDate = dateFormat(review.rows[i].dataValues.reviewDate, "mmmm dS, yyyy");
+    }
+    res.render('reviews', {json: review.rows, totalPages: totalPages, currPage: pageNum + 1});
+  });
+})
+
 app.get('/about', function(req, res) {
   res.render('about');
 })
