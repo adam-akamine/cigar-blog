@@ -132,6 +132,11 @@ h6 {
   flex: 1;
   width: 100vw; }
 
+.reviewContainer {
+  flex: 1;
+  width: 100vw;
+  padding: 0 0 80px; }
+
 .welcomeMessageContainer, .addContainer {
   height: 100vh;
   -webkit-box-flex: 1;
@@ -144,7 +149,7 @@ h6 {
   background-size: auto, cover;
   background-repeat: repeat, no-repeat; }
 
-.reviewContiner {
+.reviewContainer {
   height: 100vh;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -187,10 +192,16 @@ h6 {
   margin-bottom: 5vh; }
 
 .col-md-5 {
-  height: 20vh; }
+  height: 20vh;
+  margin-bottom: 80px; }
   @media only screen and (min-width: 551px) and (max-width: 760px) {
     .col-md-5 {
-      height: 35vh; } }
+      height: 35vh;
+      margin-bottom: 50px; } }
+  @media only screen and (min-width: 50px) and (max-width: 550px) {
+    .col-md-5 {
+      height: 35vh;
+      margin-bottom: 5px; } }
 
 .singleReview {
   margin-top: 20px;
@@ -265,14 +276,13 @@ h6 {
 .reviewListFooter {
   position: fixed;
   height: 100px;
-  bottom: 0;
+  bottom: -10px;
   background-color: #131312;
   font-family: 'Montserrat', sans-serif;
   width: 100%;
   text-align: center;
   color: white;
-  padding-top: 15px;
-  margin-bottom: -20px; }
+  padding-top: 15px; }
 
 .pagination {
   margin: 0 auto; }
@@ -295,3 +305,7 @@ h6 {
   background-color: #131312;
   color: blue;
   border: none; }
+
+.cigarThumbnail {
+  max-width: 35%;
+  height: auto; }

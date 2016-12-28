@@ -26,7 +26,7 @@ html(lang='en')
               a(href='/about') ABOUT
             li
               a(href="/reviews") REVIEWS
-    .mainContainer
+    .reviewContainer
       .welcomeMessageContainer
         .welcomeMessage
           h1 Reviews
@@ -34,10 +34,8 @@ html(lang='en')
           .review.col-md-5
             a(href="/reviews/" + (val.id))
               h3.reviewTitle #{val.cigarName}
-            h4 by #{val.author}
             h5 #{val.reviewDate}
-            h6 Shape: #{val.shape}
-            h6 Size: #{val.size}
+            img.cigarThumbnail(src=val.pic.dataValues.filename)
     .reviewListFooter
       - var n = 1;
       .pagContainer.text-center
