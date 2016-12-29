@@ -35,7 +35,8 @@ html(lang='en')
             a(href="/reviews/" + (val.id))
               h3.reviewTitle #{val.cigarName}
             h5 #{val.reviewDate}
-            img.cigarThumbnail(src=val.pic.dataValues.filename)
+            a(href='/reviews/' + val.id)
+              img.cigarThumbnail(src=val.pic.dataValues.filename)
     .reviewListFooter
       - var n = 1;
       .pagContainer.text-center
