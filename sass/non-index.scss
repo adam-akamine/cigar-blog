@@ -198,6 +198,7 @@ h6 {
 .col-md-5 {
   height: 20vh;
   margin-bottom: 80px;
+  box-sizing: border-box;
 
   @include small {
     height: 35vh;
@@ -355,4 +356,8 @@ h6 {
   @include xlarge {
     max-width: 45%;
   }
+}
+
+.lastItem {
+  margin-bottom: 100px;
 }

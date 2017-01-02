@@ -29,13 +29,21 @@ html(lang='en')
       .welcomeMessageContainer
         .welcomeMessage
           h1 Reviews
-        each val in json
-          .review.col-md-5
-            a(href="/reviews/" + (val.id))
-              h3.reviewTitle #{val.cigarName}
-            h5 #{val.reviewDate}
-            a(href='/reviews/' + val.id)
-              img.cigarThumbnail(src=val.pic.dataValues.filename)
+        each val, index in json
+          if index===5
+            .review.col-md-5.lastItem
+              a(href="/reviews/" + (val.id))
+                h3.reviewTitle #{val.cigarName}
+              h5 #{val.reviewDate}
+              a(href='/reviews/' + val.id)
+                img.cigarThumbnail(src=val.pic.dataValues.filename)
+          else
+            .review.col-md-5
+              a(href="/reviews/" + (val.id))
+                h3.reviewTitle #{val.cigarName}
+              h5 #{val.reviewDate}
+              a(href='/reviews/' + val.id)
+                img.cigarThumbnail(src=val.pic.dataValues.filename)
     .reviewListFooter
       - var n = 1;
       .pagContainer.text-center

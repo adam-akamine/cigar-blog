@@ -194,7 +194,8 @@ h6 {
 
 .col-md-5 {
   height: 20vh;
-  margin-bottom: 80px; }
+  margin-bottom: 80px;
+  box-sizing: border-box; }
   @media only screen and (min-width: 480px) {
     .col-md-5 {
       height: 35vh;
@@ -329,3 +330,6 @@ h6 {
   @media only screen and (min-width: 1200px) {
     .cigarThumbnail {
       max-width: 45%; } }
+
+.lastItem {
+  margin-bottom: 100px; }
