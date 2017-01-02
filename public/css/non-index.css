@@ -284,6 +284,10 @@ h6 {
   text-align: center;
   color: white;
   padding-top: 15px; }
+  @media only screen and (min-width: 320px) {
+    .reviewListFooter {
+      bottom: -35px;
+      padding-top: 5px; } }
 
 .pagination {
   margin: 0 auto; }
