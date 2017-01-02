@@ -7,11 +7,11 @@ $light-black-color: #131312;
 $lightgray-color: rgba(255, 255, 255, 0.619608);
 
 // media query ranges
-$xsmall: "only screen and (min-width: 50px) and (max-width: 550px)";
-$small: "only screen and (min-width: 551px) and (max-width: 760px)";
-$medium: "only screen and (min-width: 761px) and (max-width: 900px)";
-$large: "only screen and (min-width: 901px) and (max-width: 1250px)";
-$xlarge: "only screen and (min-width: 1251px)";
+$xsmall: "only screen and (min-width: 320px)";
+$small: "only screen and (min-width: 480px)";
+$medium: "only screen and (min-width: 768px)";
+$large: "only screen and (min-width: 992px)";
+$xlarge: "only screen and (min-width: 1200px)";
 
 // Mixins
 
@@ -39,6 +39,11 @@ $xlarge: "only screen and (min-width: 1251px)";
   }
 }
 
+@mixin xlarge {
+  @media #{$xlarge} {
+    @content;
+  }
+}
 
 body {
   font-family: 'PT Serif', serif;
@@ -196,7 +201,7 @@ h6 {
 
   @include small {
     height: 35vh;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
   }
 
   @include xsmall {
@@ -291,7 +296,7 @@ h6 {
 .reviewListFooter {
   position: fixed;
   height: 100px;
-  bottom: -10px;
+  bottom: -25px;
   background-color: $light-black-color;
   font-family: 'Montserrat', sans-serif;
   width: 100%;
@@ -327,6 +332,22 @@ h6 {
 }
 
 .cigarThumbnail {
-  max-width: 35%;
+  max-width: 45%;
   height: auto;
+
+  @include xsmall {
+    max-width: 60%;
+  }
+  @include small {
+    max-width: 55%;
+  }
+  @include medium {
+    max-width: 45%;
+  }
+  @include large {
+    max-width: 65%;
+  }
+  @include xlarge {
+    max-width: 45%;
+  }
 }

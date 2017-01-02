@@ -195,11 +195,11 @@ h6 {
 .col-md-5 {
   height: 20vh;
   margin-bottom: 80px; }
-  @media only screen and (min-width: 551px) and (max-width: 760px) {
+  @media only screen and (min-width: 480px) {
     .col-md-5 {
       height: 35vh;
-      margin-bottom: 50px; } }
-  @media only screen and (min-width: 50px) and (max-width: 550px) {
+      margin-bottom: 25px; } }
+  @media only screen and (min-width: 320px) {
     .col-md-5 {
       height: 35vh;
       margin-bottom: 5px; } }
@@ -213,19 +213,19 @@ h6 {
   width: 40%;
   height: 40%;
   margin-top: 25px; }
-  @media only screen and (min-width: 901px) and (max-width: 1250px) {
+  @media only screen and (min-width: 992px) {
     .showPicture {
       width: 60%;
       height: 60%; } }
-  @media only screen and (min-width: 761px) and (max-width: 900px) {
+  @media only screen and (min-width: 768px) {
     .showPicture {
       width: 65%;
       height: 65%; } }
-  @media only screen and (min-width: 551px) and (max-width: 760px) {
+  @media only screen and (min-width: 480px) {
     .showPicture {
       width: 60%;
       height: 60%; } }
-  @media only screen and (min-width: 50px) and (max-width: 550px) {
+  @media only screen and (min-width: 320px) {
     .showPicture {
       width: 65%;
       height: 65%; } }
@@ -277,7 +277,7 @@ h6 {
 .reviewListFooter {
   position: fixed;
   height: 100px;
-  bottom: -10px;
+  bottom: -25px;
   background-color: #131312;
   font-family: 'Montserrat', sans-serif;
   width: 100%;
@@ -308,5 +308,20 @@ h6 {
   border: none; }
 
 .cigarThumbnail {
-  max-width: 35%;
+  max-width: 45%;
   height: auto; }
+  @media only screen and (min-width: 320px) {
+    .cigarThumbnail {
+      max-width: 60%; } }
+  @media only screen and (min-width: 480px) {
+    .cigarThumbnail {
+      max-width: 55%; } }
+  @media only screen and (min-width: 768px) {
+    .cigarThumbnail {
+      max-width: 45%; } }
+  @media only screen and (min-width: 992px) {
+    .cigarThumbnail {
+      max-width: 65%; } }
+  @media only screen and (min-width: 1200px) {
+    .cigarThumbnail {
+      max-width: 45%; } }
