@@ -204,6 +204,10 @@ h6 {
     .col-md-5 {
       height: 35vh;
       margin-bottom: 25px; } }
+  @media only screen and (min-width: 320px) and (orientation: landscape) {
+    .col-md-5 {
+      height: 25vh;
+      margin-bottom: 250px; } }
 
 .singleReview {
   margin-top: 20px;

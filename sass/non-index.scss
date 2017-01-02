@@ -8,6 +8,7 @@ $lightgray-color: rgba(255, 255, 255, 0.619608);
 
 // media query ranges
 $xsmall: "only screen and (min-width: 320px)";
+$xsmallLandscape: "only screen and (min-width: 320px) and (orientation: landscape)";
 $small: "only screen and (min-width: 480px)";
 $medium: "only screen and (min-width: 768px)";
 $large: "only screen and (min-width: 992px)";
@@ -17,6 +18,12 @@ $xlarge: "only screen and (min-width: 1200px)";
 
 @mixin xsmall {
   @media #{$xsmall} {
+    @content;
+  }
+}
+
+@mixin xsmallLandscape {
+  @media #{$xsmallLandscape} {
     @content;
   }
 }
@@ -208,6 +215,11 @@ h6 {
   @include xsmall {
     height: 35vh;
     margin-bottom: 25px;
+  }
+
+  @include xsmallLandscape {
+    height: 25vh;
+    margin-bottom: 250px;
   }
 }
 
