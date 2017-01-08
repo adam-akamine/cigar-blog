@@ -240,7 +240,8 @@ app.post('/reviews', function(req, res) {
             price: fields.price[0],
             flavors: fields.flavors[0],
             smokeTime: fields.smokeTime[0],
-            grade: fields.grade[0]
+            grade: fields.grade[0],
+            title: fields.title[0]
           })
           .then(function(review) {
             return res.render('successReview');
@@ -303,7 +304,8 @@ app.put('/reviews/:id/edit', isAuthenticated, function(req,res) {
       price: req.body.price,
       flavors: req.body.flavors,
       smokeTime: req.body.smokeTime,
-      grade: req.body.grade
+      grade: req.body.grade,
+      title: req.body.title
     }).then(function(review) {
       Pics.findOne({
         where: {

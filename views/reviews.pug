@@ -34,13 +34,15 @@ html(lang='en')
             .review.col-md-5.lastItem
               a(href="/reviews/" + (val.id))
                 h3.reviewTitle #{val.cigarName}
+              h5.reviewTitle #{val.title}
               h5 #{val.reviewDate}
               a(href='/reviews/' + val.id)
                 img.cigarThumbnail(src=val.pic.dataValues.filename)
           else
             .review.col-md-5
               a(href="/reviews/" + (val.id))
-                h3.reviewTitle #{val.cigarName}
+                h3 #{val.cigarName}
+              h5.reviewTitle #{val.title}
               h5 #{val.reviewDate}
               a(href='/reviews/' + val.id)
                 img.cigarThumbnail(src=val.pic.dataValues.filename)
