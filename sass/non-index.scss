@@ -198,23 +198,22 @@ h6 {
 .review {
   color: white;
   margin-left: 5vw;
-  margin-bottom: 5vh;
   text-align: center;
 }
 
 .col-md-5 {
   height: 20vh;
-  margin-bottom: 80px;
+  margin-bottom: 250px;
   box-sizing: border-box;
 
   @include small {
     height: 35vh;
-    margin-bottom: 25px;
+    margin-bottom: 45px;
   }
 
   @include xsmall {
     height: 35vh;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
   }
 
   @include xsmallLandscape {
